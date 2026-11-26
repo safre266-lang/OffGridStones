@@ -1,0 +1,65 @@
+:root {
+  --bg: #f4f1ea; --ink: #23251f; --muted: #6b6e63; --card: #ffffff;
+  --moss: #4d5b45; --clay: #a9744f; --line: #ddd8cb;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0; background: var(--bg); color: var(--ink);
+  font: 17px/1.6 Georgia, "Times New Roman", serif;
+}
+.sr { position: absolute; left: -9999px; }
+a { color: var(--moss); }
+
+.top {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 14px clamp(16px, 5vw, 56px); border-bottom: 1px solid var(--line);
+  position: sticky; top: 0; background: var(--bg); z-index: 5;
+}
+.brand { font-weight: 700; letter-spacing: .04em; text-decoration: none; color: var(--ink); }
+select { font: inherit; padding: 6px 10px; border: 1px solid var(--line); border-radius: 8px; background: var(--card); }
+
+main { max-width: 1000px; margin: 0 auto; padding: 0 clamp(16px, 5vw, 32px); }
+.hero { padding: 64px 0 32px; }
+.eyebrow { text-transform: uppercase; letter-spacing: .18em; font-size: .78rem; color: var(--clay); margin: 0 0 8px; }
+h1 { font-size: clamp(2.2rem, 6vw, 3.6rem); line-height: 1.1; margin: 0 0 16px; font-weight: 600; }
+.intro { max-width: 640px; color: var(--muted); font-size: 1.1rem; }
+
+.topics { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 16px; margin: 24px 0 48px; }
+.topic {
+  display: flex; flex-direction: column; gap: 6px; text-align: start; text-decoration: none;
+  min-height: 150px; padding: 22px; border-radius: 16px; border: 1px solid var(--line);
+  background: linear-gradient(145deg, #e9e5d8, #d9d3c0); color: var(--ink);
+  font: inherit; cursor: pointer; transition: transform .15s, box-shadow .15s;
+}
+.topic:nth-child(2) { background: linear-gradient(145deg, #e8dccd, #d3bfa6); }
+.topic:nth-child(3) { background: linear-gradient(145deg, #dfe4d6, #c5cfb8); }
+.topic.etsy { background: linear-gradient(145deg, #4d5b45, #384233); color: #f4f1ea; }
+.topic:hover, .topic:focus-visible { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(0,0,0,.12); outline: none; }
+.topic.active { outline: 2px solid var(--moss); }
+.topic .t { font-size: 1.2rem; font-weight: 700; }
+.topic .d { font-size: .95rem; opacity: .85; }
+
+.posts-head { display: flex; justify-content: space-between; align-items: baseline; }
+h2 { font-weight: 600; font-size: 1.6rem; }
+.link { background: none; border: 0; color: var(--moss); cursor: pointer; font: inherit; text-decoration: underline; }
+.posts { display: grid; gap: 18px; }
+.post { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 22px 24px; }
+.post .meta { font-size: .8rem; text-transform: uppercase; letter-spacing: .12em; color: var(--clay); }
+.post h3 { margin: 6px 0 8px; font-size: 1.35rem; }
+.post p { margin: 0 0 12px; color: #3c3f36; }
+.post .shop { font-size: .95rem; }
+.note-en { font-size: .8rem; color: var(--muted); }
+
+.ask { margin: 56px 0; padding: 28px; background: var(--card); border: 1px solid var(--line); border-radius: 16px; }
+textarea { width: 100%; font: inherit; padding: 12px; border: 1px solid var(--line); border-radius: 10px; background: var(--bg); resize: vertical; }
+button[type=submit] {
+  margin-top: 10px; padding: 10px 26px; border: 0; border-radius: 999px; cursor: pointer;
+  background: var(--moss); color: #fff; font: inherit;
+}
+.status { min-height: 1.4em; color: var(--moss); }
+
+footer { text-align: center; padding: 32px 16px 48px; color: var(--muted); font-size: .9rem; border-top: 1px solid var(--line); }
+
+/* RTL (Arabic): logical properties keep the layout intact; just flip text alignment */
+[dir="rtl"] body { font-family: "Segoe UI", Tahoma, "Noto Naskh Arabic", serif; }
+[dir="rtl"] .eyebrow { letter-spacing: 0; }
