@@ -44,6 +44,10 @@
         <span class="t">Lifestyle &amp; Slow Living</span>
         <span class="d">Calm rituals and everyday aesthetics.</span>
       </button>
+      <a class="topic manga" href="#drawings">
+        <span class="t">Manga → Real Life</span>
+        <span class="d">Manga characters, reimagined as real people.</span>
+      </a>
       <a class="topic etsy" href="https://www.etsy.com/shop/AuraNaturalStones" target="_blank" rel="noopener">
         <span class="t">Etsy Collection</span>
         <span class="d"><span translate="no">Aura Natural Stones</span> — <span>handmade natural stone jewelry.</span></span>
@@ -56,6 +60,15 @@
         <button id="show-all" class="link" hidden>Show all</button>
       </div>
       <div id="posts" class="posts"></div>
+    </section>
+
+    <section id="drawings" class="drawings" aria-labelledby="drawings-title">
+      <div class="drawings-head">
+        <p class="eyebrow">reimagined</p>
+        <h2 id="drawings-title">Manga characters in real life</h2>
+        <p class="drawings-intro">A side collection: manga characters reimagined as if they lived in the real world — real skin, real light, real weight. Familiar faces from the page, seen in everyday life.</p>
+      </div>
+      <div id="gallery" class="gallery"></div>
     </section>
 
     <section class="ask">
@@ -74,6 +87,16 @@
     <a href="https://www.etsy.com/shop/AuraNaturalStones" target="_blank" rel="noopener" translate="no">Aura Natural Stones</a> ·
     <span>Traditional and cultural notes are shared as folklore, not medical advice.</span>
   </footer>
+
+  <dialog id="lightbox" class="lightbox" aria-label="Drawing">
+    <button class="close" type="button" aria-label="Close">×</button>
+    <img id="lb-img" alt="">
+    <div class="lb-cap">
+      <strong id="lb-title" translate="no"></strong>
+      <span id="lb-series" translate="no"></span>
+      <p id="lb-note"></p>
+    </div>
+  </dialog>
 
   <div id="google_translate_element" hidden></div>
   <script src="app.js"></script>

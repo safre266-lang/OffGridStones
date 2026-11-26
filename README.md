@@ -14,3 +14,20 @@ Repo Settings → Pages → Deploy from branch → `main` / root.
 
 ## Question box
 Set `FORM_ENDPOINT` at the top of `app.js` (e.g. a Formspree URL). Empty = questions are not sent anywhere.
+
+## Manga → Real Life images
+1. Put the image file in `drawings/` (JPG/PNG/WebP, portrait works best).
+2. Add an entry to `data/drawings.json` (newest first):
+```json
+[
+  {
+    "character": "Character name",
+    "series": "Manga title",
+    "credit": "Optional: artist or tool that made it",
+    "date": "2026-11-26",
+    "image": "drawings/my-image.jpg",
+    "note": "Optional short note about the image."
+  }
+]
+```
+While the list is empty, the section shows "coming soon" frames.

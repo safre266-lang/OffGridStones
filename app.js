@@ -78,6 +78,54 @@ document.querySelectorAll(".topic[data-topic]").forEach((el) => {
 });
 $("#show-all").addEventListener("click", () => { topic = null; renderPosts(); });
 
+/* ---------- Manga → Real Life drawings ---------- */
+// Add images in data/drawings.json; put image files in the drawings/ folder.
+function renderDrawings(list) {
+  const box = $("#gallery");
+  box.textContent = "";
+  if (!list.length) {
+    for (let i = 0; i < 3; i++) {
+      const f = document.createElement("div");
+      f.className = "frame empty";
+      const t = document.createElement("span");
+      t.textContent = i === 0 ? "First drawings coming soon" : "On the drawing board";
+      f.append(t);
+      box.append(f);
+    }
+    return;
+  }
+  list.forEach((d) => {
+    const fig = document.createElement("figure");
+    fig.className = "frame";
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "pic";
+    btn.setAttribute("aria-label", `Open image: ${d.character}`);
+    const img = document.createElement("img");
+    img.src = d.image; img.alt = d.alt || `Realistic image of ${d.character}${d.series ? " from " + d.series : ""}`;
+    img.loading = "lazy"; img.decoding = "async";
+    btn.append(img);
+    btn.addEventListener("click", () => openLightbox(d, img.alt));
+    const cap = document.createElement("figcaption");
+    const name = document.createElement("strong"); name.textContent = d.character; name.className = "notranslate"; name.translate = false;
+    cap.append(name);
+    const sub = [d.series, d.credit].filter(Boolean).join(" · ");
+    if (sub) { const s = document.createElement("span"); s.textContent = sub; cap.append(s); }
+    fig.append(btn, cap);
+    box.append(fig);
+  });
+}
+function openLightbox(d, alt) {
+  const lb = $("#lightbox");
+  $("#lb-img").src = d.image; $("#lb-img").alt = alt;
+  $("#lb-title").textContent = d.character;
+  $("#lb-series").textContent = [d.series, d.credit, d.date].filter(Boolean).join(" · ");
+  $("#lb-note").textContent = d.note || "";
+  lb.showModal();
+}
+$("#lightbox .close").addEventListener("click", () => $("#lightbox").close());
+$("#lightbox").addEventListener("click", (e) => { if (e.target === e.currentTarget) e.currentTarget.close(); });
+
 /* ---------- Question box ---------- */
 $("#ask-form").addEventListener("submit", async (e) => {
   e.preventDefault();
@@ -97,4 +145,5 @@ $("#ask-form").addEventListener("submit", async (e) => {
 });
 
 initTranslate();
+fetch("data/drawings.json").then((r) => r.json()).then(renderDrawings).catch(() => renderDrawings([]));
 fetch("data/posts.json").then((r) => r.json()).then((d) => { posts = d; renderPosts(); }).catch(() => {});
