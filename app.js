@@ -100,6 +100,7 @@ function renderDrawings(list) {
     const btn = document.createElement("button");
     btn.type = "button";
     btn.className = "pic";
+    if (d.warning) { btn.classList.add("sensitive"); btn.dataset.warning = d.warning; }
     btn.setAttribute("aria-label", `Open image: ${d.character}`);
     const img = document.createElement("img");
     img.src = d.image; img.alt = d.alt || `Realistic image of ${d.character}${d.series ? " from " + d.series : ""}`;
@@ -125,7 +126,7 @@ function openLightbox(d, alt) {
   $(".lb-pair").classList.toggle("two", !!d.original);
   $("#lb-title").textContent = d.character;
   $("#lb-series").textContent = [d.series, d.credit, d.date].filter(Boolean).join(" · ");
-  $("#lb-note").textContent = d.note || "";
+  $("#lb-note").textContent = [d.warning, d.note].filter(Boolean).join(" — ");
   lb.showModal();
 }
 $("#lightbox .close").addEventListener("click", () => $("#lightbox").close());
