@@ -102,3 +102,12 @@ footer { text-align: center; padding: 32px 16px 48px; color: var(--muted); font-
   position: absolute; inset-inline-end: 8px; top: 8px; width: 38px; height: 38px; border-radius: 50%;
   border: 0; background: rgba(255,255,255,.9); font-size: 1.5rem; line-height: 1; cursor: pointer; color: var(--ink);
 }
+
+/* Lightbox before/after pair */
+.lb-pair { display: block; }
+.lb-pair figure { margin: 0; }
+.lb-pair figcaption { text-align: center; font-size: .75rem; letter-spacing: .12em; text-transform: uppercase; color: var(--clay); padding: 6px 0 0; }
+.lb-pair:not(.two) figcaption { display: none; }
+.lb-pair.two { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; padding: 12px 12px 0; }
+.lb-pair.two img { max-height: 66vh; object-fit: contain; }
+@media (max-width: 640px) { .lb-pair.two { grid-template-columns: 1fr; } .lb-pair.two img { max-height: 46vh; } }

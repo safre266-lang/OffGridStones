@@ -118,6 +118,11 @@ function renderDrawings(list) {
 function openLightbox(d, alt) {
   const lb = $("#lightbox");
   $("#lb-img").src = d.image; $("#lb-img").alt = alt;
+  const fig = $("#lb-orig-fig");
+  fig.hidden = !d.original;
+  $("#lb-orig").src = d.original || "";
+  $("#lb-orig").alt = d.original ? `Original manhwa artwork of ${d.character}` : "";
+  $(".lb-pair").classList.toggle("two", !!d.original);
   $("#lb-title").textContent = d.character;
   $("#lb-series").textContent = [d.series, d.credit, d.date].filter(Boolean).join(" · ");
   $("#lb-note").textContent = d.note || "";
