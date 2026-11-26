@@ -11,8 +11,8 @@
   <header class="top">
     <a class="brand" href="#top" translate="no">OffGridStones</a>
     <label class="lang">
-      <span class="sr" data-i18n="language">Language</span>
-      <select id="lang" aria-label="Language">
+      <span class="sr">Language</span>
+      <select id="lang" class="notranslate" translate="no" aria-label="Language">
         <option value="en">English</option>
         <option value="es">Español</option>
         <option value="zh">中文</option>
@@ -26,44 +26,44 @@
 
   <main id="top">
     <section class="hero">
-      <p class="eyebrow" data-i18n="tagline">stones · culture · slow travel</p>
-      <h1 data-i18n="heroTitle">Notes from off the grid.</h1>
-      <p class="intro" data-i18n="intro">A quiet personal research blog: natural stones, cultural details, places I pass through, and the curiosity of a pharmacy mind. No faces, no noise — just observations.</p>
+      <p class="eyebrow">stones · culture · slow travel</p>
+      <h1>Notes from off the grid.</h1>
+      <p class="intro">A quiet personal research blog: natural stones, cultural details, places I pass through, and the curiosity of a pharmacy mind. No faces, no noise — just observations.</p>
     </section>
 
     <section class="topics" aria-label="Topics">
       <button class="topic" data-topic="stones">
-        <span class="t" data-i18n="t_stones">Natural Stones &amp; Minerals</span>
-        <span class="d" data-i18n="d_stones">Structure, character, meaning and care notes.</span>
+        <span class="t">Natural Stones &amp; Minerals</span>
+        <span class="d">Structure, character, meaning and care notes.</span>
       </button>
       <button class="topic" data-topic="culture">
-        <span class="t" data-i18n="t_culture">Cultural Notes &amp; Travel</span>
-        <span class="d" data-i18n="d_culture">Motifs, traditions and the atmosphere of places.</span>
+        <span class="t">Cultural Notes &amp; Travel</span>
+        <span class="d">Motifs, traditions and the atmosphere of places.</span>
       </button>
       <button class="topic" data-topic="lifestyle">
-        <span class="t" data-i18n="t_lifestyle">Lifestyle &amp; Slow Living</span>
-        <span class="d" data-i18n="d_lifestyle">Calm rituals and everyday aesthetics.</span>
+        <span class="t">Lifestyle &amp; Slow Living</span>
+        <span class="d">Calm rituals and everyday aesthetics.</span>
       </button>
       <a class="topic etsy" href="https://www.etsy.com/shop/AuraNaturalStones" target="_blank" rel="noopener">
-        <span class="t" data-i18n="t_etsy">Etsy Collection</span>
-        <span class="d"><span translate="no">Aura Natural Stones</span> — <span data-i18n="d_etsy">handmade natural stone jewelry.</span></span>
+        <span class="t">Etsy Collection</span>
+        <span class="d"><span translate="no">Aura Natural Stones</span> — <span>handmade natural stone jewelry.</span></span>
       </a>
     </section>
 
     <section class="posts-wrap">
       <div class="posts-head">
-        <h2 id="posts-title" data-i18n="latest">Latest notes</h2>
-        <button id="show-all" class="link" hidden data-i18n="showAll">Show all</button>
+        <h2 id="posts-title">Latest notes</h2>
+        <button id="show-all" class="link" hidden>Show all</button>
       </div>
       <div id="posts" class="posts"></div>
     </section>
 
     <section class="ask">
-      <h2 data-i18n="askTitle">Ask a question</h2>
-      <p data-i18n="askText">About stones, culture, travel or pharmacy curiosity — write below and I will read and answer later.</p>
+      <h2>Ask a question</h2>
+      <p>About stones, culture, travel or pharmacy curiosity — write below and I will read and answer later.</p>
       <form id="ask-form">
-        <textarea id="q" name="question" rows="4" required data-i18n-placeholder="askPlaceholder" placeholder="Your question or note…"></textarea>
-        <button type="submit" data-i18n="send">Send</button>
+        <textarea id="q" name="question" rows="4" required placeholder="Your question or note…"></textarea>
+        <button type="submit">Send</button>
         <p id="ask-status" class="status" role="status"></p>
       </form>
     </section>
@@ -72,9 +72,10 @@
   <footer>
     <span translate="no">OffGridStones</span> ·
     <a href="https://www.etsy.com/shop/AuraNaturalStones" target="_blank" rel="noopener" translate="no">Aura Natural Stones</a> ·
-    <span data-i18n="footer">Traditional and cultural notes are shared as folklore, not medical advice.</span>
+    <span>Traditional and cultural notes are shared as folklore, not medical advice.</span>
   </footer>
 
+  <div id="google_translate_element" hidden></div>
   <script src="app.js"></script>
 </body>
 </html>
