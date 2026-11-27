@@ -124,6 +124,8 @@ function openLightbox(d, alt) {
   $("#lb-orig").src = d.original || "";
   $("#lb-orig").alt = d.original ? `Original manhwa artwork of ${d.character}` : "";
   $(".lb-pair").classList.toggle("two", !!d.original);
+  $("#lb-orig-fig figcaption").textContent = d.originalLabel || "Manhwa (original)";
+  $("#lb-img").closest("figure").querySelector("figcaption").textContent = d.imageLabel || "Real life";
   $("#lb-title").textContent = d.character;
   $("#lb-series").textContent = [d.series, d.credit, d.date].filter(Boolean).join(" · ");
   $("#lb-note").textContent = [d.warning, d.note].filter(Boolean).join(" — ");

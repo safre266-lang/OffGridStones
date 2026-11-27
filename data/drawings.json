@@ -1,12 +1,15 @@
 [
   {
-    "character": "Roxana as a child",
+    "character": "Roxana, mother and baby",
     "series": "Roxana: The Way to Protect the Female Lead's Older Brother",
-    "credit": "Character by Baek Jiyeon & Summer Light (story: StoryKin) · realistic reimagining made with an AI tool",
+    "credit": "Original art by Baek Jiyeon & Summer Light (story: StoryKin) · portrait made with an AI tool",
     "date": "2026-11-26",
     "image": "drawings/roxana-child.jpg",
     "alt": "Realistic reimagining of a young girl with long wavy blonde hair, red eyes, a red ribbon choker and a pink dress, standing in a library",
-    "note": "Fan reimagining for personal, non-commercial enjoyment; the character belongs to its creators."
+    "note": "Two related images shown side by side: a manhwa panel of the mother holding her baby, and a realistic portrait of young Roxana. They are not the same scene. Fan reimagining for personal, non-commercial enjoyment; the characters and original artwork belong to their creators.",
+    "original": "drawings/roxana-child-original.jpg",
+    "originalLabel": "Manhwa panel",
+    "imageLabel": "Reimagined portrait"
   },
   {
     "character": "Roxana's mother",
